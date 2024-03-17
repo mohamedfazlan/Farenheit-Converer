@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/fahrenheit_centigrade.png">
+    <title>Farenheit Converter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .converter-form {
+            text-align: center;
+        }
+        h1{
+            background-color: wheat;
+        }
+       
+    </style>
+</head>
+<body style="background-color: yellowgreen;">
+    <div id="Fahrenheit converter form">
+        <h1>Farenheit <span style="color: rgb(119, 179, 8);">Conver <span style="color: rgb(50, 53, 52);">ter</span></span></h1>
+        <form action="">
+            <label for="fname">Enter The Fahrenheit</label><br><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <button style="background-color: rgb(185, 141, 141);">Convert</button>
+            <br><br>
+            <label for="lname">Celsius</label><br>
+            <input type="text" id="lname" name="lname"><br><br>
+            
+        </form>
+
+        <p>You Can Find The fahrenheit Here</p>
+    </div>
+    <script>
+        document.getElementById("Fahrenheit converter form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the Fahrenheit input value
+            var fahrenheit = parseFloat(document.getElementById("fname").value);
+
+            // Convert Fahrenheit to Celsius
+            var celsius = (fahrenheit - 32) * 5/9;
+
+            // Display the result in the Celsius input field
+            document.getElementById("lname").value = celsius.toFixed(2); // Round to 2 decimal places
+        });
+    </script>
+</body>
+</html>
